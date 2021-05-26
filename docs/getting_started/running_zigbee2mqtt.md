@@ -85,6 +85,20 @@ mqtt:
   # user: my_user
   # password: my_password
 ```
+
+If you are running on a Raspberry Pi, you also need to change
+
+```yaml
+port: /dev/ttyACM0
+```
+to the `/dev/serial/by-id` location you determined in step 1, for example
+
+```yaml
+port: /dev/serial/by-id/usb-Texas_Instruments_TI_CC2531_USB_CDC___0X00124B0018ED3DDF-if00
+```
+
+Note: As `/dev/ttyXXX` names may change after a reboot, always refer to your adapter by ID for reliable operation.
+
 Save the file and exit.
 
 It is recommended to use a custom network key. This can be done by adding the following to your `configuration.yaml`. With this Zigbee2MQTT will generate a network key on next startup.
